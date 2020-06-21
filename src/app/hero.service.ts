@@ -8,9 +8,15 @@ import { LogService } from "./log.service";
   providedIn: 'root'
 })
 export class HeroService {
+  constructor(private logService: LogService) { }
   getHeroes(): Observable<Hero[]> {
+    // *todo: send mensage after fetch
     this.logService.add('HeroService: fetched heroes')
     return of(HEROES);
   }
-  constructor(private logService: LogService) { }
+  getHero(id: number): Observable<Hero> {
+    // *todo: send mensage after fetch
+    this.logService.add(`HeroService: fetched hero id=${id}`)
+    return of(HEROES.find(hero => hero.id === id))
+  }
 }
