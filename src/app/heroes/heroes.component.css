@@ -1,5 +1,5 @@
 .heroes {
-  margin: 0;
+  margin: 0 auto;
   list-style-type: none;
   padding: 0;
   min-width: 15em;
